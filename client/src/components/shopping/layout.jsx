@@ -4,7 +4,7 @@ import ShoppingHeader from "@/components/shopping/header.jsx";
 function ShoppingLayout() {
     return(
         <div className="flex flex-col bg-white overflow-hidden">
-        {/*    common header*/}
+        {/*  ===  common header*/ }
             <ShoppingHeader/>
             <main className="flex flex-col w-full">
                 <Outlet/>

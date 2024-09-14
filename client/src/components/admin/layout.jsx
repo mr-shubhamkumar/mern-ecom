@@ -1,4 +1,3 @@
-import React from 'react'
 import AdminSidebar from "@/components/admin/sidebar.jsx";
 import AdminHeader from "@/components/admin/header.jsx";
 import {Outlet} from "react-router-dom";
