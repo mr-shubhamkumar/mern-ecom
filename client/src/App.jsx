@@ -13,13 +13,20 @@ import ShoppingHome from "@/pages/shopping/home.jsx";
 import ShoppingListing from "@/pages/shopping/listing.jsx";
 import ShoppingAccount from "@/pages/shopping/account.jsx";
 import ShoppingCheckOut from "@/pages/shopping/checkout.jsx";
-import CheckAuth from "./components/common/check-auth";
 import UnauthPage from "./pages/unauth-page";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { checkAuth } from "./store/auth-slice";
+import CheckAuth from "./components/common/check-auth";
 
 function App() {
-  // isAuthenticated, user, children
-  const isAuthenticated = false;
-  const user = null;
+
+  const {user, isAuthenticated} = useSelector(state=>state.auth)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, [dispatch]);
   return (
     <div className="flex flex-col overflow-hidden bg-white">
       {/* common components */}

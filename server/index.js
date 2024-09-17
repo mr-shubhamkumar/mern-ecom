@@ -3,7 +3,7 @@ const express = require("express")
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const app = express()
-const port = 3000
+const port = 5000
 require("./db/connect") // mongodb conection to database
 const authRouser = require('./routes/auth/auth-routes')
 
