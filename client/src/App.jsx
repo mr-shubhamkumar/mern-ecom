@@ -18,19 +18,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { checkAuth } from "./store/auth-slice";
 import CheckAuth from "./components/common/check-auth";
+import { Skeleton } from "@/components/ui/skeleton"
+
 
 function App() {
 
-  const {user, isAuthenticated} = useSelector(state=>state.auth)
+  const {user, isAuthenticated , isLoading} = useSelector(state=>state.auth)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(checkAuth());
   }, [dispatch]);
+
+  if(isLoading) return <Skeleton className="w-[800px] h-[600px]  bg-black" />
+
   return (
     <div className="flex flex-col overflow-hidden bg-white">
-      {/* common components */}
-      <h1>Header components</h1>
       <Routes>
 
         <Route

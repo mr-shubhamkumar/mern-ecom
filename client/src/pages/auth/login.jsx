@@ -43,7 +43,7 @@ function AuthLogin() {
       </p>
     </div>
     <CommonForm
-    fromControls={loginFormControls}
+    formControls={loginFormControls}
     buttonText={'Sign In'}
     formData={formData}
     setFormData={setFormData}
